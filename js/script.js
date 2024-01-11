@@ -1,7 +1,7 @@
 /* =========== Typing animation =================== */
 
 var typed = new Typed(".typing", {
-    strings:["", "Web Designer", "Graphic Designer", "UI Designer", "UX Designer", "Web Developer"],
+    strings: ["", "Web Designer", "Graphic Designer", "UI Designer", "UX Designer", "Web Developer"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
@@ -9,20 +9,16 @@ var typed = new Typed(".typing", {
 
 /* =========== Active Class switcher =================== */
 
+/* =========== Gallery zoom effect start =================== */
 
+$(function () {
+    $('.bimg').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
 
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* =========== Gallery zoom effect end =================== */
