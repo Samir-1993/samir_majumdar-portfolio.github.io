@@ -626,8 +626,10 @@ h3.my-profession{
 .portfolio .portfolio-item .portfolio-item-inner{
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
-    cursor: pointer;
+/*    cursor: pointer;*/
     overflow: hidden;
+    position: relative;
+    transition: all .8s;
 }
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-img{
     width: 100%;
@@ -638,6 +640,87 @@ h3.my-profession{
     display: block;
 }
 
+.portfolio-item-overlay{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all .5s;
+/*
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+*/
+}
+.portfolio-item-overlay:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+}
+.portfolio-item-overlay:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+/*    background-color: #151515;*/
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+}
+.portfolio-item-inner:hover .portfolio-item-overlay:before {
+    width: 50%;
+    
+}
+.portfolio-item-inner:hover .portfolio-item-overlay:after {
+    width: 50%;
+}
+.port_iconbox{
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .8s all ease;
+    -o-transition: .8s all ease;
+    transition: .8s all ease;
+}
+.port_iconbox i{
+    font-size: 16px;
+    color: var(--skin-color);
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+.portfolio-item-inner:hover .port_iconbox{
+    opacity: 1;
+    visibility: visible;
+    transition: all .8s;
+}
+.portfolio-item-inner .port_iconbox:hover{
+    background: var(--skin-color);
+}
+.portfolio-item-inner .port_iconbox:hover i{
+    color: #fff;
+    transition: all .3s;
+}
 .portfolio .nav-pills .nav-link {
     color: var(--text-black-900);
     font-size: 16px;
@@ -685,16 +768,48 @@ h3.my-profession{
 } */
 
 
-
+.gallery-imgbox{
+    position: relative;
+}
 .gallery-iconbox {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.gallery-imgbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+}
+.gallery-imgbox:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+/*    background-color: #151515;*/
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+}
+.gallery-box:hover .gallery-imgbox:before {
+    width: 50%;
+    
+}
+.gallery-box:hover .gallery-imgbox:after {
+    width: 50%;
+}
 
 .gallery-icon-1 {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: grid !important;
     place-items: center;
@@ -702,12 +817,12 @@ h3.my-profession{
     position: absolute;
     top: 50%;
     left: 50% !important;
-    z-index: 22;
+    z-index: 2;
     -webkit-transform: translate(-50%, -50%) scale(0);
     -ms-transform: translate(-50%, -50%) scale(0);
     transform: translate(-50%, -50%) scale(0);
     color: var(--skin-color);
-    font-size: 22px;
+    font-size: 18px;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: .3s all ease;
@@ -728,6 +843,7 @@ h3.my-profession{
     background: #fff;
 }
 
+/*
 .gallery-hover-bg {
     position: absolute;
     z-index: 4;
@@ -741,11 +857,14 @@ h3.my-profession{
     -o-transition: .3s all ease;
     transition: .3s all ease;
 }
+*/
 
+/*
 .gallery-box:hover .gallery-hover-bg {
     opacity: 1;
     visibility: visible;
 }
+*/
 
 
 
@@ -936,13 +1055,29 @@ h3.my-profession{
 }
 
 @media (max-width:575px){
-    
+.section {
+    padding: 0px 15px;
+}    
 .about .about-content .personal-info .info-item {
     flex: 0 0 100%;
     max-width: 100%;
 }
 h3.my-profession {
     font-size: 22px;
+}    
+.portfolio .nav{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.portfolio .nav-pills .nav-item{
+    display: block;
+    width: 100%;
+}     
+.portfolio .nav-pills .nav-link{
+    display: block;
+    width: 100%;
 }    
     
     

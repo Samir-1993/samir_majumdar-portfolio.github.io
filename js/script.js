@@ -22,3 +22,17 @@ $(function () {
 });
 
 /* =========== Gallery zoom effect end =================== */
+
+/* =========== Gallery zoom effect2 start =================== */
+
+$(function () {
+    $('.bimg2').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+});
+
+/* =========== Gallery zoom effect2 end =================== */
