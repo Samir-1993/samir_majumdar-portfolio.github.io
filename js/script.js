@@ -36,3 +36,15 @@ $(function () {
 });
 
 /* =========== Gallery zoom effect2 end =================== */
+
+/* =========== Active class switch in menu start =================== */
+
+$(document).ready(function(){
+    $(".aside .nav li a").click(function(){
+        $(".aside .nav li a.active").removeClass("active");
+        $(this).addClass("active");
+    })
+})
+
+
+/* =========== Active class switch in menu end =================== */
