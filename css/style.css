@@ -377,7 +377,7 @@ h3.my-profession{
     color: var(--skin-color);
 }
 .home-info p{
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     font-size: 20px;
     color: var(--text-black-900);
 }
@@ -426,6 +426,78 @@ h3.my-profession{
 .desk-img{
     display: block;
 }
+.social_icons {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    transition: 0.3s ease-in-out;
+}
+
+.social_icons .icons {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    position: relative;
+    place-items: center;
+    border: 1px solid var(--skin-color);
+    background-color: var(--skin-color);
+    border-radius: 0;
+    margin-right: 7px;
+    transition: 0.3s ease-in-out;
+    /*    clip-path: polygon(20% 0, 100% 0%, 79% 100%, 0% 100%);*/
+}
+.social_icons .icons:last-child{
+    margin-right: 0;
+}
+/*
+.header .social_con .social_icons .icons::after{
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 52px;
+    height: 38px;
+    background: #fff;
+    transition: 0.3s ease-in-out;
+    clip-path: polygon(20% 0, 100% 0%, 79% 100%, 0% 100%);
+}
+*/
+/*
+.header .social_con .social_icons .icons:hover::after{
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+*/
+.social_icons .icons i {
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.social_icons .icons i:first-child {
+    margin-left: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social_icons .icons:hover {
+    border: 1px solid var(--text-black-900);
+    background-color: var(--text-black-900);
+    transition: 0.3s ease-in-out;
+}
+
+.social_icons .icons:hover i {
+    color: var(--bg-black-900);
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+
 
 /*About*/
 

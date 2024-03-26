@@ -44,7 +44,7 @@ $(document).ready(function(){
         $(".aside .nav li a.active").removeClass("active");
         $(this).addClass("active");
     })
-})
+});
 
 
 /* =========== Active class switch in menu end =================== */
