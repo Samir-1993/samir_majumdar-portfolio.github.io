@@ -63,6 +63,32 @@ $(document).ready(function(){
 
 /* =========== Active class switch in menu end =================== */
 
+/* =========== Active class Auto switch menu start =================== */
+
+$(document).ready(function() {
+    var sections = $('section');
+    var navLinks = $('.nav li a');
+
+    $(window).on('scroll', function() {
+        var currentScroll = $(this).scrollTop();
+        var currentSection;
+
+        sections.each(function() {
+            var sectionTop = $(this).offset().top - 60; // Adjust this value based on your nav height
+            if (currentScroll >= sectionTop) {
+                currentSection = $(this);
+            }
+        });
+
+        var id = currentSection && currentSection.length ? currentSection[0].id : '';
+        navLinks.removeClass('active');
+        if (id) {
+            $('.nav li a[href="#' + id + '"]').addClass('active');
+        }
+    });
+});
+
+/* =========== Active class Auto switch menu end =================== */
 
 /* ===========  Prevents scroll to top when clicking on <a href="#"> start =================== */
 
