@@ -37,6 +37,20 @@ $(function () {
 
 /* =========== Gallery zoom effect2 end =================== */
 
+/* =========== Gallery zoom effect3 start =================== */
+
+$(function () {
+    $('.bimg3').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+});
+
+/* =========== Gallery zoom effect3 end =================== */
+
 /* =========== Active class switch in menu start =================== */
 
 $(document).ready(function(){
